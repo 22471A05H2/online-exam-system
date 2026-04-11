@@ -4,10 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-# 🔥 FIX PERMISSION
-RUN chmod +x mvnw
+# 🔥 FIX permission (strong fix)
+RUN chmod +x mvnw && chmod +x mvnw.cmd
 
-# 🔥 BUILD PROJECT
 RUN ./mvnw clean package -DskipTests
 
 EXPOSE 10000
