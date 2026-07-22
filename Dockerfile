@@ -1,11 +1,10 @@
-FROM eclipse-temurin:25-jdk
+FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
 COPY . .
 
-# 🔥 FIX permission (strong fix)
-RUN chmod +x mvnw && chmod +x mvnw.cmd
+RUN chmod +x mvnw
 
 RUN ./mvnw clean package -DskipTests
 
